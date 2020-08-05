@@ -97,11 +97,10 @@ class EventTest < Minitest::Test
       event.add_food_truck(food_truck1)
       event.add_food_truck(food_truck2)
       event.add_food_truck(food_truck3)
-
       assert_equal [item1], event.overstocked_items
     end
 
-    def test_it_can_list_overstocked_items
+    def test_it_can_sort_items
       event = Event.new("South Pearl Street Farmers Market")
       item1 = Item.new({name: 'Peach Pie (Slice)', price: "$3.75"})
       item2 = Item.new({name: 'Apple Pie (Slice)', price: '$2.50'})
@@ -119,9 +118,7 @@ class EventTest < Minitest::Test
       event.add_food_truck(food_truck1)
       event.add_food_truck(food_truck2)
       event.add_food_truck(food_truck3)
-
       assert_equal ["Apple Pie (Slice)", "Banana Nice Cream", "Peach Pie (Slice)", "Peach-Raspberry Nice Cream"], event.sorted_item_list
-
 
     end
 
