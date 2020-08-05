@@ -20,6 +20,25 @@ class Event
     end
   end
 
+    def food_trucks_that_sell(item)
+      @food_trucks.find_all do |food_truck|
+      food_truck.inventory.include?(item)
+    end
+  end
+
+  def total_inventory
+    hash = Hash.new {|h,k| h[k] = {quantity: 0, food_trucks: [] }}
+      @food_trucks.each do |food_truck|
+        food_truck.inventory.each do |item, ammount|
+            hash[item][:quantity]+= ammount
+            hash[item][:food_trucks] << food_truck
+          end
+        end
+      hash
+  end
+
+
+
 
 
 end
