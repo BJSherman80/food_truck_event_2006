@@ -31,7 +31,7 @@ class FoodTruckTest < Minitest::Test
     assert_equal ({item1 => 55, item2 => 12}), food_truck.inventory
   end
 
-  def test_total_potential_inventory
+  def test_total_potential_revenue
     event = Event.new("South Pearl Street Farmers Market")
     food_truck1 = FoodTruck.new("Rocky Mountain Pies")
     item1 = Item.new({name: 'Peach Pie (Slice)', price: "$3.75"})
